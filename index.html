@@ -68,7 +68,7 @@
                 height: 100vh;
                 border: none;
             }
-            
+
             .botoes > button {
                 display: block;
                 margin: 20px auto;
@@ -106,8 +106,10 @@
                 trocar_cor.style.backgroundColor = 'red';
                 title.style.color = '#fff';
                 select_color.style.color = '#eee';
-                console.log('Você trocou a cor de fundo para vermelho!');
                 btn_vermelho.style.border = '2px solid #fff';
+                btn_vermelho.style.backgroundColor = 'red';
+
+                console.log('Você trocou a cor de fundo para vermelho!');
             });
 
             btn_azul.addEventListener('click', function() {
@@ -116,6 +118,8 @@
                 title.style.color = '#fff';
                 select_color.style.color = '#eee';
                 btn_azul.style.border = '2px solid #fff';
+                btn_azul.style.backgroundColor = '#0c51b8';
+
                 console.log('Você trocou a cor de fundo para azul!');
             });
 
@@ -125,6 +129,8 @@
                 title.style.color = '#fff';
                 select_color.style.color = '#eee';
                 btn_preto.style.border = '2px solid #fff';
+                btn_preto.style.backgroundColor = '#000';
+
                 console.log('Você trocou a cor de fundo para preto!');
             });
         };
