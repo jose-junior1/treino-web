@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background com JavaScript</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Tahoma;
+        }
+
+        section  {
+            max-width: 1024px;
+            width: 100%;
+            margin: 100px auto;
+            text-align: center;
+            padding: 10px 50px;
+            border: 2px solid;
+        }
+
+        section h1 {
+            margin-top: 60px;
+            font-weight: normal;
+        }
+
+        button {
+            margin: 20px 0 30px 0;
+            width: 120px;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            border: none;
+        }
+
+        .btn-vermelho {
+            background-color: red;
+            color: #fff;
+            margin-right: 16px;
+        }
+
+        .btn-azul {
+            background-color: #0c51b8;
+            color: #fff;
+        }
+
+        .btn-preto {
+            background-color: #000;
+            color: #fff;
+            margin-left: 16px;
+        }
+
+        @media screen and (max-width: 767px) {
+            .troca-cor {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                width: 100%;
+                margin: 0 auto;
+                padding: 10px 10px;
+                height: 100vh;
+                border: none;
+            }
+            
+            .botoes > button {
+                display: block;
+                margin: 20px auto;
+                width: 100%;
+                padding: 30px 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <section class="troca-cor">
+        <h1 class="title">Modificando a cor do Background com JavaScript</h1>
+        <br>
+        <p class="select-color">Por favor, selecione uma cor:</p>
+        <div class="botoes">
+            <button class="btn-vermelho" type="button">Vermelho</button>
+            <button class="btn-azul" type="button">Azul</button>
+            <button class="btn-preto" type="button">Preto</button>
+        </div>
+    </section>
+    <!--APENAS TREINANDO O JAVASCRIPT, FAZ TEMPO QUE NÃO MEXO COM ELE-->
+
+    <script>
+        function trocaCor() {
+            const trocar_cor = document.querySelector('.troca-cor');
+            const btn_vermelho = document.querySelector('.btn-vermelho');
+            const btn_azul = document.querySelector('.btn-azul');
+            const btn_preto = document.querySelector('.btn-preto');
+            const title = document.querySelector('.title');
+            const select_color = document.querySelector('.select-color');
+
+            btn_vermelho.addEventListener('click', function() {
+                document.querySelectorAll('button').forEach(btn => btn.style.border = 'none');
+                trocar_cor.style.backgroundColor = 'red';
+                title.style.color = '#fff';
+                select_color.style.color = '#eee';
+                console.log('Você trocou a cor de fundo para vermelho!');
+                btn_vermelho.style.border = '2px solid #fff';
+            });
+
+            btn_azul.addEventListener('click', function() {
+                document.querySelectorAll('button').forEach(btn => btn.style.border = 'none');
+                trocar_cor.style.backgroundColor = '#0c51b8';
+                title.style.color = '#fff';
+                select_color.style.color = '#eee';
+                btn_azul.style.border = '2px solid #fff';
+                console.log('Você trocou a cor de fundo para azul!');
+            });
+
+            btn_preto.addEventListener('click', function() {
+                document.querySelectorAll('button').forEach(btn => btn.style.border = 'none');
+                trocar_cor.style.backgroundColor = '#000';
+                title.style.color = '#fff';
+                select_color.style.color = '#eee';
+                btn_preto.style.border = '2px solid #fff';
+                console.log('Você trocou a cor de fundo para preto!');
+            });
+        };
+
+        trocaCor();
+    </script>
+</body>
+</html>
